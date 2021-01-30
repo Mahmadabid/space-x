@@ -4,7 +4,7 @@ import LaunchDetails from "./LaunchDetalis";
 
 describe("render App component", () => {
     let container: any;
-    beforeEach(() => (container = shallow(<LaunchDetails Link={{}} success={''} data={{}} />)));
+    beforeEach(() => (container = shallow(<LaunchDetails Link={{}} data={{}} />)));
 
     it("should render a div", () => {
         expect(container.find("div").length).toBeGreaterThanOrEqual(1);

@@ -4,11 +4,10 @@ import './style.css';
 
 interface Props {
     data: LaunchinfoQuery;
-    success: string;
     Link: any;
 }
 
-const LaunchDetails: React.FC<Props> = ({ data, success, Link }) => {
+const LaunchDetails: React.FC<Props> = ({ data, Link }) => {
 
     function getId(url: string | null | undefined) {
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -24,6 +23,8 @@ const LaunchDetails: React.FC<Props> = ({ data, success, Link }) => {
     if (!data.launch) {
         return <div>Launch data not available</div>
     }
+
+    var success: string = JSON.stringify(data.launch.launch_success);
 
     return (
         <div className="launchDetails">

@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 
 interface Props {
     idstate: string;
-    success: string;
 }
 
-const LaunchDeatailsContainer: React.FC<Props> = ({ idstate, success }) => {
+const LaunchDeatailsContainer: React.FC<Props> = ({ idstate}) => {
 
     const { data, loading, error } = useLaunchinfoQuery({ variables: { id: idstate } });
 
@@ -29,7 +28,7 @@ const LaunchDeatailsContainer: React.FC<Props> = ({ idstate, success }) => {
             return <div>select data</div>
         }
 
-        return <LaunchDetails data={data} success={success} Link={Link}/>
+        return <LaunchDetails data={data} Link={Link}/>
     }
 }
 

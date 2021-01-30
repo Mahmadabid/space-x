@@ -4,7 +4,7 @@ import Launch from "./Launch";
 
 describe("render App component", () => {
     let container: any;
-    beforeEach(() => (container = shallow(<Launch setid={()=>{}} setsuccess={()=>{}} data={{}} />)));
+    beforeEach(() => (container = shallow(<Launch setid={()=>{}} data={{}} />)));
 
     it("should render a div", () => {
         expect(container.find("div").length).toBeGreaterThanOrEqual(1);

@@ -6,7 +6,6 @@ import LaunchDeatailsContainer from "./components/LaunchDetails/index";
 function App() {
 
   const [idstate, setid] = useState('select');
-  const [success, setsuccess] = useState('null');
 
   return (
     <div className="App">
@@ -14,11 +13,8 @@ function App() {
         setid={(str: string) => {
           setid(str);
         }}
-        setsuccess={(str: string) => {
-          setsuccess(str);
-        }}
       />
-      <LaunchDeatailsContainer idstate={idstate} success={success} />
+      <LaunchDeatailsContainer idstate={idstate} />
     </div>
   );
 }
