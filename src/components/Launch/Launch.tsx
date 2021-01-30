@@ -5,11 +5,12 @@ import './style.css';
 interface Props {
     data: LaunchesListQuery;
     setid: (str: string) => void;
+    islit: boolean;
 }
 
-const Launch: React.FC<Props> = ({ setid, data }) => {
+const Launch: React.FC<Props> = ({ setid, data, islit }) => {
     return (
-        <div className="launches">
+        <div className={`${islit ? '' : 'dark'} launches`}>
             <h3>All Space X Launches</h3>
 
             <select name="launch" id="launch" className="launch" onChange={(e) => setid(e.target.value)}>

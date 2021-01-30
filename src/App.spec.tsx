@@ -11,15 +11,15 @@ describe("render App component", () => {
   beforeEach(() => (container = shallow(<App />)));
 
   it("should render a div", () => {
-    expect(container.find("div").length).toEqual(1);
+    expect(container.find("div").length).toEqual(2);
   });
 
   it("should render LaunchContainer component", () => {
-    expect(container.containsMatchingElement(<LaunchContainer setsuccess={jest.fn()} setid={jest.fn()}/>)).toEqual(false);
+    expect(container.containsMatchingElement(<LaunchContainer islit={true} setid={jest.fn()}/>)).toEqual(false);
   });
 
   it("should render LaunchDetailsContainer component", () => {
-    expect(container.containsMatchingElement(<LaunchDeatailsContainer idstate={String} success={String}/>)).toEqual(false);
+    expect(container.containsMatchingElement(<LaunchDeatailsContainer idstate={String} />)).toEqual(false);
   });
 
 });

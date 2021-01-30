@@ -2,9 +2,9 @@ import React from "react";
 import { shallow } from "enzyme";
 import Launch from "./Launch";
 
-describe("render App component", () => {
+describe("render Launch component", () => {
     let container: any;
-    beforeEach(() => (container = shallow(<Launch setid={()=>{}} data={{}} />)));
+    beforeEach(() => (container = shallow(<Launch islit={true} setid={()=>{}} data={{}} />)));
 
     it("should render a div", () => {
         expect(container.find("div").length).toBeGreaterThanOrEqual(1);

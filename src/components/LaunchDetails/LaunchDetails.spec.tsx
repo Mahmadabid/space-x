@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import LaunchDetails from "./LaunchDetalis";
 
-describe("render App component", () => {
+describe("render LaunchDetails component", () => {
     let container: any;
     beforeEach(() => (container = shallow(<LaunchDetails Link={{}} data={{}} />)));
 

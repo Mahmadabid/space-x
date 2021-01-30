@@ -4,9 +4,10 @@ import Launch from './Launch';
 
 interface Props {
     setid: (str: string) => void;
+    islit: boolean;
 }
 
-const LaunchContainer: React.FC<Props> = ({ setid }) => {
+const LaunchContainer: React.FC<Props> = ({ setid, islit }) => {
     const { data, loading, error } = useLaunchesListQuery();
 
     if (loading) {
@@ -22,6 +23,7 @@ const LaunchContainer: React.FC<Props> = ({ setid }) => {
         setid={(str: string) => {
             setid(str);
         }}
+        islit={islit}
         />
 }
 
