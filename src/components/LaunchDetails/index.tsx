@@ -1,6 +1,7 @@
 import React from "react";
 import { useLaunchinfoQuery } from "../../generated/graphql";
 import LaunchDetails from "./LaunchDetalis";
+import { Link } from "react-router-dom";
 
 interface Props {
     idstate: string;
@@ -28,7 +29,7 @@ const LaunchDeatailsContainer: React.FC<Props> = ({ idstate, success }) => {
             return <div>select data</div>
         }
 
-        return <LaunchDetails data={data} success={success}/>
+        return <LaunchDetails data={data} success={success} Link={Link}/>
     }
 }
 

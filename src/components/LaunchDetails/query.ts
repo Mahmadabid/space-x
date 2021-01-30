@@ -11,6 +11,7 @@ export const QUERY_LAUNCH_Details = gql`
         links {
             flickr_images
             video_link
+            article_link
         }
         mission_name
         rocket {

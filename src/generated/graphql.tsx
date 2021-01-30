@@ -1348,7 +1348,7 @@ export type LaunchinfoQuery = (
       & Pick<LaunchSite, 'site_name'>
     )>, links?: Maybe<(
       { __typename?: 'LaunchLinks' }
-      & Pick<LaunchLinks, 'flickr_images' | 'video_link'>
+      & Pick<LaunchLinks, 'flickr_images' | 'video_link' | 'article_link'>
     )>, rocket?: Maybe<(
       { __typename?: 'LaunchRocket' }
       & Pick<LaunchRocket, 'rocket_name' | 'rocket_type'>
@@ -1404,6 +1404,7 @@ export const LaunchinfoDocument = gql`
     links {
       flickr_images
       video_link
+      article_link
     }
     mission_name
     rocket {

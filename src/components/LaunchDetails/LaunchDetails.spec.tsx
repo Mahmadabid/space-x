@@ -4,18 +4,26 @@ import LaunchDetails from "./LaunchDetalis";
 
 describe("render App component", () => {
     let container: any;
-    beforeEach(() => (container = shallow(<LaunchDetails success={''} data={{}} />)));
+    beforeEach(() => (container = shallow(<LaunchDetails Link={{}} success={''} data={{}} />)));
 
     it("should render a div", () => {
-        expect(container.find("div").length).toBeGreaterThanOrEqual(0);
+        expect(container.find("div").length).toBeGreaterThanOrEqual(1);
     });
 
     it("should render a h1", () => {
         expect(container.find("h1").length).toBeGreaterThanOrEqual(0);
     });
 
+    it("should render a Link", () => {
+        expect(container.find("Link").length).toBeGreaterThanOrEqual(0);
+    });
+
     it("should render a p", () => {
         expect(container.find("p").length).toBeGreaterThanOrEqual(0);
+    });
+
+    it("should render a a", () => {
+        expect(container.find("a").length).toBeGreaterThanOrEqual(0);
     });
 
     it("should render a span", () => {
