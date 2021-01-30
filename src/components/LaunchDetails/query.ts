@@ -1,10 +1,10 @@
 import gql from "graphql-tag";
 
 export const QUERY_LAUNCH_Details = gql`
-    query launchinfo($id: String) {
+    query launchinfo($id: ID!) {
         launch(id: $id) {
         launch_success
-        flight_number
+        id
         launch_site {
             site_name
         }

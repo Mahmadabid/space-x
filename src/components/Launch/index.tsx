@@ -1,13 +1,14 @@
 import React from "react";
-import { useLaunchesQuery } from "../../generated/graphql";
+import { useLaunchesListQuery } from "../../generated/graphql";
 import Launch from './Launch';
 
 interface Props {
-    setid: any;
+    setid: (str: string) => void;
+    setsuccess: (str: string) => void;
 }
 
-const LaunchContainer: React.FC<Props> = ({setid}) => {
-    const {data, loading, error} = useLaunchesQuery();
+const LaunchContainer: React.FC<Props> = ({ setid, setsuccess }) => {
+    const { data, loading, error } = useLaunchesListQuery();
 
     if (loading) {
         return <div>loading...</div>
@@ -17,7 +18,14 @@ const LaunchContainer: React.FC<Props> = ({setid}) => {
         return <div>error</div>
     }
 
-    return <Launch setid={setid} data={data} />
+    return <Launch
+        data={data}
+        setid={(str: string) => {
+            setid(str);
+        }}
+        setsuccess={(str: string) => {
+            setsuccess(str);
+        }} />
 }
 
 export default LaunchContainer;

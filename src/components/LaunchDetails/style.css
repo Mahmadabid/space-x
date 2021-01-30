@@ -43,6 +43,10 @@
     height: 500px;
   }
 
+  .report {
+    font-size: large;
+  }
+
   @media only screen and (max-width: 1050px) {
     .LaunchDetailsImageList {
         grid-template-columns: repeat(1, 1fr);

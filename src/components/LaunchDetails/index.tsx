@@ -4,9 +4,10 @@ import LaunchDetails from "./LaunchDetalis";
 
 interface Props {
     idstate: string;
+    success: string;
 }
 
-const LaunchDeatailsContainer: React.FC<Props> = ({ idstate }) => {
+const LaunchDeatailsContainer: React.FC<Props> = ({ idstate, success }) => {
 
     const { data, loading, error } = useLaunchinfoQuery({ variables: { id: idstate } });
 
@@ -27,7 +28,7 @@ const LaunchDeatailsContainer: React.FC<Props> = ({ idstate }) => {
             return <div>select data</div>
         }
 
-        return <LaunchDetails data={data} />
+        return <LaunchDetails data={data} success={success}/>
     }
 }
 
