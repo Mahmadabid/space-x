@@ -4,10 +4,9 @@ import './style.css';
 
 interface Props {
     data: LaunchinfoQuery;
-    Link: any;
 }
 
-const LaunchDetails: React.FC<Props> = ({ data, Link }) => {
+const LaunchDetails: React.FC<Props> = ({ data }) => {
 
     function getId(url: string | null | undefined) {
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -40,9 +39,7 @@ const LaunchDetails: React.FC<Props> = ({ data, Link }) => {
             <p>Launched from {data.launch.launch_site?.site_name} in {data.launch.launch_year}</p>
             <p>{data.launch.details}</p>
             {data.launch.links?.article_link? 
-                <Link to={{ pathname: data.launch.links?.article_link }}
-                    target="_blank">View Article
-                </Link>: ''
+                <a href={data.launch.links?.article_link} rel="noreferrer" target="_blank"> View Article</a>: ''
             }
             {!!data.launch.links && !!data.launch.links?.flickr_images && (
                 <div className="LaunchDetailsImageList">
